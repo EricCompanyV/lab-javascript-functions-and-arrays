@@ -124,10 +124,6 @@ function avg(array) {
 
 }
 
-const arrayTest = [6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false]
-let avera = avg(arrayTest)
-console.log(avera)
-
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -144,8 +140,19 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
-
+function uniquifyArray(array) {
+  if (!array.length) {
+    return null
+  } else {
+    let newArray = []
+    for (let i = 0; i < array.length; ++i) {
+      if (i === array.indexOf(array[i])) {
+        newArray.push(array[i])
+      }
+    }
+    return newArray
+  }
+}
 
 
 // Iteration #6: Find elements
