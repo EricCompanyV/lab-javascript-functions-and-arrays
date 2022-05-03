@@ -17,28 +17,59 @@ function findLongestWord(words) {
   if (!words.length) {
       return null
   } else {
-  for (let i= 0; i < words.length; i++) {
-    if (words[i].length > longerWord) {
-      longerWord = words[i]
+    for (let i= 0; i < words.length; i += 1) {
+      if (words[i].length > longerWord.length) {
+       longerWord = words[i]
+      }
     }
+    return longerWord
   }
+ 
 }
-  return longerWord
-}
-
-
+let wordsTest = ['a', 'zab', '12abc', '$$abcd', 'abcde', 'ironhack']
+findLongestWord(wordsTest)
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
+function sumNumbers(numbers) {
+  let totalSum = 0
+  if (!numbers.length) {
+    return 0
+  } else {
+    for (let i=0; i < numbers.length; i++) {
+    totalSum += numbers[i]
+    }
+    return totalSum
+  }
+}
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(array) {
+  if (!array.length) {
+    return 0
+  } else {
+    let numberSum = 0
+    for (let i=0; i < array.length; ++i) {
+      if (typeof array[i] === "object") {
+        throw new Error("Unsupported data type sir or ma'am")
+      } else if (typeof array[i] === "number") {
+        console.log(array[i])
+        numberSum += array[i]
+      } else if (typeof array[i] === "string") {
+        numberSum += array[i].length
+      } else if (typeof array[i] && array[i]){
+        numberSum += 1
+      }
+    }
+    return numberSum
+    }
+  }
 
 
+const array = [10, 5, 4, 32, 8]
+console.log(typeof array)
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
