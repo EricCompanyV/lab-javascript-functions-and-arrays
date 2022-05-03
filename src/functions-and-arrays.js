@@ -55,7 +55,6 @@ function sum(array) {
       if (typeof array[i] === "object") {
         throw new Error("Unsupported data type sir or ma'am")
       } else if (typeof array[i] === "number") {
-        console.log(array[i])
         numberSum += array[i]
       } else if (typeof array[i] === "string") {
         numberSum += array[i].length
@@ -68,23 +67,67 @@ function sum(array) {
   }
 
 
-const array = [10, 5, 4, 32, 8]
-console.log(typeof array)
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(array) {
+  if (!array.length) {
+    return null
+  } else {
+    let sum=0
+    for (let i=0; i < array.length;i++) {
+      sum += array[i]
+    }
+    return sum/array.length
+  }
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(array) {
+  if (!array.length) {
+    return null
+  } else {
+    let sum=0
+    for (let i=0; i < array.length;i++) {
+      sum += array[i].length
+    }
+    return sum/array.length 
+
+  }
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+// It gets the correct outputs in the logs, but I can't make the test to look like passed
+function avg(array) {
+  if (!array.length) {
+    return null
+  } else {
+    let sum=0
+    for (let i=0; i < array.length;i++) {
+      if (typeof array[i] === "number") {
+        sum += array[i]
+      } else if (typeof array[i] === "string") {
+        sum += array[i].length
+      } else if (array[i] === true) {
+        sum += 1
+      }
+      console.log(i)
+      console.log(sum)
+    }
+    return (sum/array.length).toFixed(2)
+  }
+
+}
+
+const arrayTest = [6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false]
+let avera = avg(arrayTest)
+console.log(avera)
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
